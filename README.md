@@ -19,7 +19,10 @@ See the following link if you don't have it installed https://github.com/junegun
 - ```GCP Secret Manger```: 
 You will need to have a GCP project with 3 variables stored in secret manager corresponding to the argocd credentials
 
+- ```awk```: 
+For Unix or Unix-like systems (such as Linux or macOS), awk should already be available by default on most distributions. If for some reason you don't have it installed, you can install it using your system's package manager. For example: For Ubuntu or Debian, you can use the following command at the command line: ```sudo apt-get install gawk```. For macOS,  you can use the following command at the command line: ```brew install gawk```
 ## Settings
+
 Edit the file ```argocd-search-app.sh``` and change environment variables
 
 ```bash
@@ -27,6 +30,11 @@ Edit the file ```argocd-search-app.sh``` and change environment variables
 export SECRET_ARGOCD_SERVER="SECRET_NAME_ARGOCD_SERVER"
 export SECRET_ARGOCD_USER="SECRET_NAME_ARGOCD_USER"
 export SECRET_ARGOCD_PASSWORD="SECRET_NAME_ARGOCD_PASSWORD"
+```
+
+```bash
+# Ensure the binary has to execute permissions
+chmod +x argocd-search-app.sh
 ```
 
 ## Usage
@@ -59,8 +67,7 @@ export SECRET_ARGOCD_PASSWORD="SECRET_NAME_ARGOCD_PASSWORD"
 💚 demo-5
 
 ```
-- To navigate through the list as an interactive menu we will use the tools ```fzf```.
-you can use the up, down, mouse pointer and scroll keys to navigate between the list
+- To navigate through the list as an interactive menu we will use the tools ```fzf```. You can use the up, down, mouse pointer and scroll keys to navigate between the list
 
 ```bash
 ./argocd-search-app.sh demo | fzf -0
