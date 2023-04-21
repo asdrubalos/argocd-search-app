@@ -1,6 +1,8 @@
 # argocd-search-apps
 This script allows listing the applications in argocd indicating their Healthy/Unhealthy status with a heart emoji (green or red).
 
+<img src="https://argocd-image-updater.readthedocs.io/en/latest/assets/logo.png"/>
+
 ## Requirements
 
 - ```argocd``` CLI:
