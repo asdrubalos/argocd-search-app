@@ -43,7 +43,8 @@ chmod +x argocd-search-app.sh
 
 ```bash
 ./argocd-search-app.sh
-
+```
+```
 💔 app-1
 💚 app-2
 💚 app-3
@@ -52,26 +53,26 @@ chmod +x argocd-search-app.sh
 💚 demo-3
 💚 demo-4
 💚 demo-5
-
 ```
 
 - List only existing Healthy/Unhealthy apps with a filter by name. The following command will display only applications that have the word "demo" as part of the name.
 
 ```bash
 ./argocd-search-app.sh demo
-
+```
+```
 💚 demo-1
 💔 demo-2
 💚 demo-3
 💚 demo-4
 💚 demo-5
-
 ```
 - To navigate through the list as an interactive menu we will use the tools ```fzf```. You can use the up, down, mouse pointer and scroll keys to navigate between the list
 
 ```bash
 ./argocd-search-app.sh demo | fzf -0
-
+```
+```
   💚 demo-1
   💔 demo-2
   💚 demo-3
