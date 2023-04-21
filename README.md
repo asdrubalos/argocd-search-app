@@ -36,9 +36,14 @@ chmod +x argocd-search-app.sh
 ```
 - Be sure to create the secrets corresponding to the argocd credentials
 ```bash
-echo -n "Url of argocd here" | gcloud secrets create SECRET_NAME_ARGOCD_SERVER --data-file=- --project=<GCP_PROJECT_ID>
-echo -n "Username of argocd here" | gcloud secrets create SECRET_NAME_ARGOCD_SERVER --data-file=- --project=<GCP_PROJECT_ID>
-echo -n "Password of argocd here" | gcloud secrets create SECRET_NAME_ARGOCD_SERVER --data-file=- --project=<GCP_PROJECT_ID>
+echo -n "Url of argocd here" | gcloud secrets create SECRET_NAME_ARGOCD_SERVER \
+--data-file=- --project=<GCP_PROJECT_ID>
+
+echo -n "Username of argocd here" | gcloud secrets create SECRET_NAME_ARGOCD_USER \
+--data-file=- --project=<GCP_PROJECT_ID>
+
+echo -n "Password of argocd here" | gcloud secrets create SECRET_NAME_ARGOCD_PASSWORD \
+--data-file=- --project=<GCP_PROJECT_ID>
 ```
 
 ## Usage
