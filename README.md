@@ -17,11 +17,11 @@ Check the following link if you do not have it installed https://cloud.google.co
 See the following link if you don't have it installed https://github.com/junegunn/fzf
 
 - ```GCP Secret Manger```: 
-You will need to have a GCP project with 3 variables stored in Secret Manager corresponding to the argocd credentials:
+You will need to have a GCP project with 3 secret stored in Secret Manager corresponding to the argocd credentials:
 
 >> ```SECRET_NAME_ARGOCD_SERVER```: Url of argocd
 
->> ```SECRET_NAME_ARGOCD_USER```: User of argocd
+>> ```SECRET_NAME_ARGOCD_USER```: Username of argocd
 
 >> ```SECRET_NAME_ARGOCD_PASSWORD```: Password of argocd
 
@@ -30,9 +30,15 @@ You will need to have a GCP project with 3 variables stored in Secret Manager co
 For Unix or Unix-like systems (such as Linux or macOS), awk should already be available by default on most distributions. If for some reason you don't have it installed, you can install it using your system's package manager. For example: For Ubuntu or Debian, you can use the following command at the command line: ```sudo apt-get install gawk```. For macOS,  you can use the following command at the command line: ```brew install gawk```
 ## Settings
 
+- Ensure the binary has to execute permissions
 ```bash
-# Ensure the binary has to execute permissions
 chmod +x argocd-search-app.sh
+```
+- Be sure to create the secrets corresponding to the argocd credentials
+```bash
+echo -n "Url of argocd here" | gcloud secrets create SECRET_NAME_ARGOCD_SERVER --data-file=- --project=<GCP_PROJECT_ID>
+echo -n "Username of argocd here" | gcloud secrets create SECRET_NAME_ARGOCD_SERVER --data-file=- --project=<GCP_PROJECT_ID>
+echo -n "Password of argocd here" | gcloud secrets create SECRET_NAME_ARGOCD_SERVER --data-file=- --project=<GCP_PROJECT_ID>
 ```
 
 ## Usage
